@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" href="luadocx.css" type="text/css" />
-<title>framework.server.RedisEasy</title>
+<title>framework.client.luaoc</title>
 <link rel="stylesheet" href="monokai.css">
 <script src="highlight.pack.js"></script>
 <script type="text/javascript" charset="utf-8">hljs.initHighlightingOnLoad();</script>
@@ -41,14 +41,14 @@
             <li><a href="framework.client.display.html">framework.client.display</a></li>
             <li><a href="framework.client.init.html">framework.client.init</a></li>
             <li><a href="framework.client.luaj.html">framework.client.luaj</a></li>
-            <li><a href="framework.client.luaoc.html">framework.client.luaoc</a></li>
+            <li><strong>framework.client.luaoc</strong></li>
             <li><a href="framework.client.network.html">framework.client.network</a></li>
             <li><a href="framework.client.scheduler.html">framework.client.scheduler</a></li>
             <li><a href="framework.client.transition.html">framework.client.transition</a></li>
             <li><a href="framework.client.ui.html">framework.client.ui</a></li>
             <li><a href="framework.client.ui.autolayout.html">framework.client.ui.AutoLayout</a></li>
             <li><a href="framework.client.ui.scrollview.html">framework.client.ui.ScrollView</a></li>
-            <li><strong>framework.server.RedisEasy</strong></li>
+            <li><a href="framework.server.rediseasy.html">framework.server.RedisEasy</a></li>
             <li><a href="framework.server.serveraction.html">framework.server.ServerAction</a></li>
             <li><a href="framework.server.serverapp.html">framework.server.ServerApp</a></li>
             <li><a href="framework.server.session.html">framework.server.Session</a></li>
@@ -69,17 +69,140 @@
 
         <td id="content">
 
-          <h1>Module <code>framework.server.RedisEasy</code></h1>
+          <h1>Module <code>framework.client.luaoc</code></h1>
 
           
           <!-- BEGIN module doc -->
 
           <div id="module_doc">
 
+<p>Call Objective-C form Lua, and call Lua from Objective-C.</p>
+
+<ul>
+<li>Call Objective-C Class Static Method from Lua</li>
+<li>Pass aruments to Objective-C</li>
+<li>Pass Lua function to Objective-C</li>
+<li>Call Lua function from Objective-C</li>
+</ul>
+
+<h2>HOW TO USE:</h2>
+
+
+<pre><code class="lua">local luaoc = require("framework.client.luaoc")
+
+local function onLogin(result)
+    if result == "ok" then
+        print("login ok")
+    else
+        print("login failure, error message = ", result)
+    end
+end
+
+local args = {
+    username  = "dualface",
+    password  = "123456",
+    autologin = true,
+    callback  = onLogin
+}
+local ok, ret = luaoc.callStaticMethod("MySDK", "login", args)
+if ok then
+    -- call success
+    print("ret = ", ret)
+else
+    -- call failure
+    print("error code = ", ret)
+end
+</code></pre>
+
+<h3>Objective-C method:</h3>
+
+
+<pre><code class="lua">#include "LuaObjcBridge.h"
+
++ (NSString *)login:(NSDictionary *)dict
+{
+    NSString *username = [dict objectForKey:@"username"];
+    NSString *password = [dict objectForKey:@"password"];
+    NSNumber autologin = [dict objectForKey:@"autologin"];
+    int callback = [[dict objectForKey:@"callback"] intValue];
+
+    if (.....)
+    {
+        LuaObjcBridge::callLuaFunctionById(callback, "ok");
+    }
+    else
+    {
+        LuaObjcBridge::callLuaFunctionById(callback, "error message");
+    }
+    LuaObjcBridge::releaseLuaFunctionById(callback);
+
+    return @"return something";
+}
+</code></pre>
+
+<br />
+
 
           </div>
 
           <!-- END module doc -->
+
+
+          <!--  BEGIN functions index -->
+
+          <h2>Functions</h2>
+          <table class="function_list">
+
+
+            <tr>
+              <td class="name" nowrap><a href="#anchor_luaoc_callStaticMethod">luaoc.callStaticMethod&nbsp;(className,&nbsp;methodName,&nbsp;args)</a></td>
+              <td class="summary">Call Objective-C Class Method</td>
+            </tr>
+
+
+          </table>
+
+          <!--  END functions index -->
+
+          <br />
+          <br />
+
+          <!-- BEGIN functions details -->
+
+          <h2>Functions</h2>
+          <dl class="function">
+
+
+            <dt class="">
+              <a name="anchor_luaoc_callStaticMethod"></a>
+              <h3>luaoc.callStaticMethod (className, methodName, args)</h3>
+            </dt>
+
+            <dd class="">
+
+<p>Call Objective-C Class Method</p>
+
+<h3>Parameters:</h3>
+
+<ul>
+<li>string <strong>className</strong> Objective-C class name</li>
+<li>string <strong>methodName</strong> Method name</li>
+<li>[<em>optional table <strong>args</strong></em>] Arguments pass to Objective-C</li>
+</ul>
+
+<h3>Returns:</h3>
+
+<ul>
+<li>boolean call success or failure</li>
+<li>mixed Objective-C method returned value</li>
+</ul>
+
+            </dd>
+
+
+          </dl>
+
+          <!-- BEGIN functions details -->
 
 
       </td> <!-- id="content" -->
