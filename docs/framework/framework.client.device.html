@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" href="luadocx.css" type="text/css" />
-<title>framework.client.device</title>
+<title>quick-cocos2d-x API Documents - framework.client.device</title>
 <link rel="stylesheet" href="monokai.css">
 <script src="highlight.pack.js"></script>
 <script type="text/javascript" charset="utf-8">hljs.initHighlightingOnLoad();</script>
@@ -27,13 +27,11 @@
             <li><a href="index.html">framework.init</a></li>
             <li><a href="framework.client.api.context.html">framework.client.api.Context</a></li>
             <li><a href="framework.client.api.eventprotocol.html">framework.client.api.EventProtocol</a></li>
-            <li><a href="framework.client.api.flurry.html">framework.client.api.Flurry</a></li>
             <li><a href="framework.client.api.gamenetwork.html">framework.client.api.GameNetwork</a></li>
             <li><a href="framework.client.api.gamestate.html">framework.client.api.GameState</a></li>
             <li><a href="framework.client.api.localize.html">framework.client.api.Localize</a></li>
             <li><a href="framework.client.api.store.html">framework.client.api.Store</a></li>
             <li><a href="framework.client.api.timer.html">framework.client.api.Timer</a></li>
-            <li><a href="framework.client.api.gamenetwork.chinamobile.html">framework.client.api.gamenetwork.ChinaMobile</a></li>
             <li><a href="framework.client.api.gamenetwork.openfeint.html">framework.client.api.gamenetwork.OpenFeint</a></li>
             <li><a href="framework.client.audio.html">framework.client.audio</a></li>
             <li><a href="framework.client.crypto.html">framework.client.crypto</a></li>
@@ -48,21 +46,16 @@
             <li><a href="framework.client.ui.html">framework.client.ui</a></li>
             <li><a href="framework.client.ui.autolayout.html">framework.client.ui.AutoLayout</a></li>
             <li><a href="framework.client.ui.scrollview.html">framework.client.ui.ScrollView</a></li>
+            <li><a href="framework.server.mysqleasy.html">framework.server.MysqlEasy</a></li>
             <li><a href="framework.server.rediseasy.html">framework.server.RedisEasy</a></li>
             <li><a href="framework.server.serveraction.html">framework.server.ServerAction</a></li>
             <li><a href="framework.server.serverapp.html">framework.server.ServerApp</a></li>
             <li><a href="framework.server.session.html">framework.server.Session</a></li>
             <li><a href="framework.server.init.html">framework.server.init</a></li>
-            <li><a href="framework.server.resty.http.html">framework.server.resty.http</a></li>
-            <li><a href="framework.server.resty.mysql.html">framework.server.resty.mysql</a></li>
-            <li><a href="framework.server.resty.redis.html">framework.server.resty.redis</a></li>
-            <li><a href="framework.server.resty.url.html">framework.server.resty.url</a></li>
             <li><a href="framework.shared.modelbase.html">framework.shared.ModelBase</a></li>
             <li><a href="framework.shared.debug.html">framework.shared.debug</a></li>
             <li><a href="framework.shared.errors.html">framework.shared.errors</a></li>
             <li><a href="framework.shared.functions.html">framework.shared.functions</a></li>
-            <li><a href="framework.shared.json.html">framework.shared.json</a></li>
-            <li><a href="framework.shared.json.simplejson.html">framework.shared.json.simplejson</a></li>
           </ul>
 
         </td> <!-- navigation -->
@@ -78,7 +71,7 @@
 
 <p>Query information about the system (get device information, current language, etc) and execute system functions (show alert view, show input box, etc).</p>
 
-<p>.</p>
+<p><br /></p>
 
 <p>Following properties predefined:</p>
 
@@ -136,6 +129,7 @@
 </tr>
 </tbody>
 </table></li>
+<li><p><strong>device.writeablePath</strong> returns the writeable path.</p></li>
 </ul>
 
 <br />
@@ -216,6 +210,10 @@
 
 <p>Displays a platform-specific activity indicator.</p>
 
+<h3>Note:</h3>
+
+<p>Supported platform: ios, android.</p>
+
             </dd>
 
 
@@ -227,6 +225,10 @@
             <dd class="">
 
 <p>Hides activity indicator.</p>
+
+<h3>Note:</h3>
+
+<p>Supported platform: ios, android.</p>
 
             </dd>
 
@@ -249,6 +251,10 @@
 <li><p>function <strong>listener</strong> The listener to be notified when a user presses any button in the alert box.</p></li>
 </ul>
 
+<h3>Note:</h3>
+
+<p>Supported platform: ios, android, mac.</p>
+
             </dd>
 
 
@@ -262,6 +268,10 @@
 <p>Dismisses an alert box programmatically.</p>
 
 <p>For example, you may wish to have a popup alert that automatically disappears after ten seconds even if the user doesn’t click it. In that case, you could call this function at the end of a ten-second timer.</p>
+
+<h3>Note:</h3>
+
+<p>Supported platform: ios, android, mac.</p>
 
             </dd>
 
@@ -279,13 +289,15 @@
   <p>OpenUDID is a drop-in replacement for the deprecated uniqueIdentifier property of the UIDevice class on iOS (a.k.a. UDID) and otherwise is an industry-friendly equivalent for iOS and Android.</p>
 </blockquote>
 
-<p>Supported platform: ios, android, mac.</p>
-
 <h3>Returns:</h3>
 
 <ul>
 <li>string OpenUDID</li>
 </ul>
+
+<h3>Note:</h3>
+
+<p>Supported platform: ios, android, mac.</p>
 
             </dd>
 
@@ -317,6 +329,10 @@ Try this URL encoder to encode your text.</p></li>
 </ul></li>
 </ul>
 
+<h3>Note:</h3>
+
+<p>Supported platform: ios, android.</p>
+
             </dd>
 
 
@@ -343,6 +359,10 @@ Try this URL encoder to encode your text.</p></li>
 <li>string User entered text. If uesr cancel input dialog, return nil.</li>
 </ul>
 
+<h3>Note:</h3>
+
+<p>Supported platform: mac, windows.</p>
+
             </dd>
 
 
@@ -357,7 +377,7 @@ Try this URL encoder to encode your text.</p></li>
     </table> <!-- id="main" -->
 
     <div id="about">
-      <i>update: 2013-01-08 19:40:20, generated by <a href="http://github.com/dualface/luadocx">luadocx 1.0</a></i>
+      <i>update: 2013-01-20 13:38:33, generated by <a href="http://github.com/dualface/luadocx">luadocx 1.0</a></i>
     </div> <!-- id="about" -->
 
   </div> <!-- id="container" -->

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" href="luadocx.css" type="text/css" />
-<title>framework.client.display</title>
+<title>quick-cocos2d-x API Documents - framework.client.display</title>
 <link rel="stylesheet" href="monokai.css">
 <script src="highlight.pack.js"></script>
 <script type="text/javascript" charset="utf-8">hljs.initHighlightingOnLoad();</script>
@@ -27,13 +27,11 @@
             <li><a href="index.html">framework.init</a></li>
             <li><a href="framework.client.api.context.html">framework.client.api.Context</a></li>
             <li><a href="framework.client.api.eventprotocol.html">framework.client.api.EventProtocol</a></li>
-            <li><a href="framework.client.api.flurry.html">framework.client.api.Flurry</a></li>
             <li><a href="framework.client.api.gamenetwork.html">framework.client.api.GameNetwork</a></li>
             <li><a href="framework.client.api.gamestate.html">framework.client.api.GameState</a></li>
             <li><a href="framework.client.api.localize.html">framework.client.api.Localize</a></li>
             <li><a href="framework.client.api.store.html">framework.client.api.Store</a></li>
             <li><a href="framework.client.api.timer.html">framework.client.api.Timer</a></li>
-            <li><a href="framework.client.api.gamenetwork.chinamobile.html">framework.client.api.gamenetwork.ChinaMobile</a></li>
             <li><a href="framework.client.api.gamenetwork.openfeint.html">framework.client.api.gamenetwork.OpenFeint</a></li>
             <li><a href="framework.client.audio.html">framework.client.audio</a></li>
             <li><a href="framework.client.crypto.html">framework.client.crypto</a></li>
@@ -48,21 +46,16 @@
             <li><a href="framework.client.ui.html">framework.client.ui</a></li>
             <li><a href="framework.client.ui.autolayout.html">framework.client.ui.AutoLayout</a></li>
             <li><a href="framework.client.ui.scrollview.html">framework.client.ui.ScrollView</a></li>
+            <li><a href="framework.server.mysqleasy.html">framework.server.MysqlEasy</a></li>
             <li><a href="framework.server.rediseasy.html">framework.server.RedisEasy</a></li>
             <li><a href="framework.server.serveraction.html">framework.server.ServerAction</a></li>
             <li><a href="framework.server.serverapp.html">framework.server.ServerApp</a></li>
             <li><a href="framework.server.session.html">framework.server.Session</a></li>
             <li><a href="framework.server.init.html">framework.server.init</a></li>
-            <li><a href="framework.server.resty.http.html">framework.server.resty.http</a></li>
-            <li><a href="framework.server.resty.mysql.html">framework.server.resty.mysql</a></li>
-            <li><a href="framework.server.resty.redis.html">framework.server.resty.redis</a></li>
-            <li><a href="framework.server.resty.url.html">framework.server.resty.url</a></li>
             <li><a href="framework.shared.modelbase.html">framework.shared.ModelBase</a></li>
             <li><a href="framework.shared.debug.html">framework.shared.debug</a></li>
             <li><a href="framework.shared.errors.html">framework.shared.errors</a></li>
             <li><a href="framework.shared.functions.html">framework.shared.functions</a></li>
-            <li><a href="framework.shared.json.html">framework.shared.json</a></li>
-            <li><a href="framework.shared.json.simplejson.html">framework.shared.json.simplejson</a></li>
           </ul>
 
         </td> <!-- navigation -->
@@ -82,14 +75,6 @@
 <li>Query display screen information.</li>
 <li>Mange scenes.</li>
 <li>Creates display objects.</li>
-</ul>
-
-<p><br /></p>
-
-<p><strong>References:</strong></p>
-
-<ul>
-<li><a href="http://www.cocos2d-iphone.org/wiki/doku.php/prog_guide:index">cocos2d Programming Guide</a></li>
 </ul>
 
 <br />
@@ -120,7 +105,7 @@
 
             <tr>
               <td class="name" nowrap><a href="#anchor_display_getRunningScene">display.getRunningScene&nbsp;()</a></td>
-              <td class="summary">Get current running Scene.</td>
+              <td class="summary">Get current running scene.</td>
             </tr>
 
 
@@ -151,6 +136,12 @@
             <tr>
               <td class="name" nowrap><a href="#anchor_display_newNode">display.newNode&nbsp;()</a></td>
               <td class="summary">Creates a node object.</td>
+            </tr>
+
+
+            <tr>
+              <td class="name" nowrap><a href="#anchor_display_setSpritePixelFormat">display.setSpritePixelFormat&nbsp;(filename,&nbsp;format)</a></td>
+              <td class="summary"></td>
             </tr>
 
 
@@ -203,6 +194,12 @@
 
 
             <tr>
+              <td class="name" nowrap><a href="#anchor_display_removeSpriteFrameByImageName">display.removeSpriteFrameByImageName&nbsp;(imageName)</a></td>
+              <td class="summary"></td>
+            </tr>
+
+
+            <tr>
               <td class="name" nowrap><a href="#anchor_display_newBatchNode">display.newBatchNode&nbsp;(image,&nbsp;capacity)</a></td>
               <td class="summary">Creates CCSpriteBatchNode object from an image.</td>
             </tr>
@@ -221,12 +218,6 @@
 
 
             <tr>
-              <td class="name" nowrap><a href="#anchor_display_pixels">display.pixels&nbsp;(x,&nbsp;y)</a></td>
-              <td class="summary">### Example:</td>
-            </tr>
-
-
-            <tr>
               <td class="name" nowrap><a href="#anchor_display_newFrames">display.newFrames&nbsp;(pattern,&nbsp;begin,&nbsp;length,&nbsp;isReversed)</a></td>
               <td class="summary">Creates multiple frames by pattern.</td>
             </tr>
@@ -235,42 +226,6 @@
             <tr>
               <td class="name" nowrap><a href="#anchor_display_newAnimation">display.newAnimation&nbsp;(frames,&nbsp;time)</a></td>
               <td class="summary">create animation</td>
-            </tr>
-
-
-            <tr>
-              <td class="name" nowrap><a href="#anchor_display_extendScene">display.extendScene&nbsp;(scene)</a></td>
-              <td class="summary">### Example:</td>
-            </tr>
-
-
-            <tr>
-              <td class="name" nowrap><a href="#anchor_display_extendNode">display.extendNode&nbsp;(node)</a></td>
-              <td class="summary">### Example:</td>
-            </tr>
-
-
-            <tr>
-              <td class="name" nowrap><a href="#anchor_display_extendLayer">display.extendLayer&nbsp;(node)</a></td>
-              <td class="summary">### Example:</td>
-            </tr>
-
-
-            <tr>
-              <td class="name" nowrap><a href="#anchor_display_extendSprite">display.extendSprite&nbsp;(node)</a></td>
-              <td class="summary">### Example:</td>
-            </tr>
-
-
-            <tr>
-              <td class="name" nowrap><a href="#anchor_display_extendShape">display.extendShape&nbsp;(shape)</a></td>
-              <td class="summary">### Example:</td>
-            </tr>
-
-
-            <tr>
-              <td class="name" nowrap><a href="#anchor_ccsize">ccsize&nbsp;(width,&nbsp;height)</a></td>
-              <td class="summary">### Example:</td>
             </tr>
 
 
@@ -461,8 +416,8 @@ display.replaceScene(scene3, "CCTransitionFade", 0.5, ccc3(255, 255, 255))
 </tr>
 </tbody>
 </table></li>
-<li><p>[<em>optional float <strong>time</strong></em>]</p></li>
-<li><p>[<em>optional mixed <strong>more</strong></em>]</p></li>
+<li><p>[<em>optional float <strong>time</strong></em>] duration of the transition</p></li>
+<li><p>[<em>optional mixed <strong>more</strong></em>] parameter for the transition</p></li>
 </ul>
 
             </dd>
@@ -475,7 +430,7 @@ display.replaceScene(scene3, "CCTransitionFade", 0.5, ccc3(255, 255, 255))
 
             <dd class="">
 
-<p>Get current running Scene.</p>
+<p>Get current running scene.</p>
 
 <h3>Returns:</h3>
 
@@ -579,7 +534,7 @@ sprite:align(display.LEFT_TOP, 100, 100)
 </tr>
 </tbody>
 </table></li>
-<li><p>[<em>optional float <strong>x</strong>, float <strong>y</strong></em>]</p></li>
+<li><p>[<em>optional float <strong>x</strong>, float <strong>y</strong></em>] position of the node</p></li>
 </ul>
 
             </dd>
@@ -601,8 +556,6 @@ sprite:align(display.LEFT_TOP, 100, 100)
 <li>It can receive Accelerometer input</li>
 <li>It can receive device hardward keypad input</li>
 </ul>
-
-<p>CCLayer object created by display have more methods, see <a href="#anchor_display_extendLayer">display.extendLayer()</a> .</p>
 
 <h3>Example:</h3>
 
@@ -659,8 +612,6 @@ layer:setTouchEnabled(true)
 <li>z-order</li>
 </ul>
 
-<p>CCNode object created by display have more methods, see <a href="#anchor_display_extendNode">display.extendNode()</a> .</p>
-
 <h3>Example:</h3>
 
 
@@ -675,6 +626,18 @@ transition.moveBy(group, {time = 2.0, x = 100})
 <ul>
 <li>CCNode</li>
 </ul>
+
+            </dd>
+
+
+            <dt class="">
+              <a name="anchor_display_setSpritePixelFormat"></a>
+              <h3>display.setSpritePixelFormat (filename, format)</h3>
+            </dt>
+
+            <dd class="">
+
+
 
             </dd>
 
@@ -704,7 +667,7 @@ local sprite2 = display.newSprite("#frame0001.png")
 
 <ul>
 <li><p>string <strong>filename</strong> image filename or sprite frame name. sprite frame name have prefix character '#'.</p></li>
-<li><p>[<em>optional float <strong>x</strong>, float <strong>y</strong></em>] sprite initial position</p></li>
+<li><p>[<em>optional float <strong>x</strong>, float <strong>y</strong></em>] initial position or the sprite</p></li>
 </ul>
 
 <h3>Returns:</h3>
@@ -976,6 +939,18 @@ local sprite1 = display.newSprite("#sprite0001.png")
 
 
             <dt class="">
+              <a name="anchor_display_removeSpriteFrameByImageName"></a>
+              <h3>display.removeSpriteFrameByImageName (imageName)</h3>
+            </dt>
+
+            <dd class="">
+
+
+
+            </dd>
+
+
+            <dt class="">
               <a name="anchor_display_newBatchNode"></a>
               <h3>display.newBatchNode (image, capacity)</h3>
             </dt>
@@ -1091,22 +1066,6 @@ sprite:setDisplayFrame(frame3)
 
 
             <dt class="">
-              <a name="anchor_display_pixels"></a>
-              <h3>display.pixels (x, y)</h3>
-            </dt>
-
-            <dd class="">
-
-<h3>Example:</h3>
-
-<h3>Parameters:</h3>
-
-<h3>Returns:</h3>
-
-            </dd>
-
-
-            <dt class="">
               <a name="anchor_display_newFrames"></a>
               <h3>display.newFrames (pattern, begin, length, isReversed)</h3>
             </dt>
@@ -1165,102 +1124,6 @@ local animation = display.newAnimation(frames, 0.5 / 20) -- 0.5s play 20 frames
             </dd>
 
 
-            <dt class="">
-              <a name="anchor_display_extendScene"></a>
-              <h3>display.extendScene (scene)</h3>
-            </dt>
-
-            <dd class="">
-
-<h3>Example:</h3>
-
-<h3>Parameters:</h3>
-
-<h3>Returns:</h3>
-
-            </dd>
-
-
-            <dt class="">
-              <a name="anchor_display_extendNode"></a>
-              <h3>display.extendNode (node)</h3>
-            </dt>
-
-            <dd class="">
-
-<h3>Example:</h3>
-
-<h3>Parameters:</h3>
-
-<h3>Returns:</h3>
-
-            </dd>
-
-
-            <dt class="">
-              <a name="anchor_display_extendLayer"></a>
-              <h3>display.extendLayer (node)</h3>
-            </dt>
-
-            <dd class="">
-
-<h3>Example:</h3>
-
-<h3>Parameters:</h3>
-
-<h3>Returns:</h3>
-
-            </dd>
-
-
-            <dt class="">
-              <a name="anchor_display_extendSprite"></a>
-              <h3>display.extendSprite (node)</h3>
-            </dt>
-
-            <dd class="">
-
-<h3>Example:</h3>
-
-<h3>Parameters:</h3>
-
-<h3>Returns:</h3>
-
-            </dd>
-
-
-            <dt class="">
-              <a name="anchor_display_extendShape"></a>
-              <h3>display.extendShape (shape)</h3>
-            </dt>
-
-            <dd class="">
-
-<h3>Example:</h3>
-
-<h3>Parameters:</h3>
-
-<h3>Returns:</h3>
-
-            </dd>
-
-
-            <dt class="">
-              <a name="anchor_ccsize"></a>
-              <h3>ccsize (width, height)</h3>
-            </dt>
-
-            <dd class="">
-
-<h3>Example:</h3>
-
-<h3>Parameters:</h3>
-
-<h3>Returns:</h3>
-
-            </dd>
-
-
           </dl>
 
           <!-- BEGIN functions details -->
@@ -1272,7 +1135,7 @@ local animation = display.newAnimation(frames, 0.5 / 20) -- 0.5s play 20 frames
     </table> <!-- id="main" -->
 
     <div id="about">
-      <i>update: 2013-01-08 19:40:20, generated by <a href="http://github.com/dualface/luadocx">luadocx 1.0</a></i>
+      <i>update: 2013-01-20 13:38:33, generated by <a href="http://github.com/dualface/luadocx">luadocx 1.0</a></i>
     </div> <!-- id="about" -->
 
   </div> <!-- id="container" -->
